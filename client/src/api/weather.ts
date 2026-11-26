@@ -7,7 +7,10 @@ import type {City, WeatherResponse} from "../types/weather";
 //The function takes a City and returns a Promise
 //An async function always returns a Promise and promise<WeatherResponse> means
 //"later, this will give you a WeatherResponse" 
-export async function fetchWeather(city: City): Promise<WeatherResponse> {
+export async function fetchWeather(
+    city: City,
+    signal?: AbortSignal
+): Promise<WeatherResponse> {
 
     //URLSearchParams builds the ?key=value&key=value part safely, so we dont glue strings by hand
     const params = new URLSearchParams({
@@ -20,7 +23,9 @@ export async function fetchWeather(city: City): Promise<WeatherResponse> {
 
 
     //${params} turns the object into a string like "latitude=52.52&longitude=13.41&current=temperature_2m,..."
-    const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
+    const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`,
+        {signal}
+    );
 
     //fetch does not throw on 404 or 500, so we check the status manually
     if (!response.ok) {

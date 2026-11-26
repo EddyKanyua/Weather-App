@@ -21,3 +21,18 @@ main {text-align: center; padding: 1rem;}
 .temp {font-size: 3rem; font-weight: 700; margin: 0;}
 .details {list-style: none; padding: 0; opacity: 0.85;}
 .error {color: #f87171;}
+
+.search {margin: 1rem auto; max-width: 320px; text-align: left; position: relative; }
+.search label {display: block; margin-bottom: 0.25rem; font-size: 0.9rem;}
+.search input {
+  width: 100%; box-sizing: border-box;
+  padding: 0.6rem 0.8rem; border-radius: 0.5rem;
+  border: 1px solid #475569; background: #1e293b; color:inherit; font-size: 0.85rem; opacity: 0.8;
+}
+.search-status {min-height: 1.2rem; margin: 0.4rem 0; font-size: 0.85rem; opacity: 0.8;}
+.suggestions {list-style: none; margin: 0; padding: 0; background: #1e293b; border-radius: 0.5rem;}
+.suggestions button {
+  width: 100%; text-align: left; padding: 0.6rem 0.8rem;
+  background: none; border: none; color: inherit; font-size: 1rem; cursor: pointer;
+}
+.suggestions button:hover, .suggestions button:focus-visible {background: #334155;}

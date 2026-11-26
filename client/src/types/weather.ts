@@ -1,13 +1,8 @@
-//export lets other files import these types
-//The shape of one city we want weather for
-
 export interface City {
     name: string;
     latitude: number;
     longitude: number;
 }
-
-//The "current" objects from the Open-Meteo API
 export interface CurrentWeather {
     time: string;   
     temperature_2m: number;
@@ -16,10 +11,20 @@ export interface CurrentWeather {
     wind_speed_10m: number;
     weather_code: number;
 }
-
-//The whole response .We only list the parts we use
 export interface WeatherResponse {
     latitude: number;
     longitude: number;
     current: CurrentWeather;
+}
+export interface GeoCodingResult {
+    id: number;
+    name: string;
+    latitude: number;
+    longitude: number;
+    country?: string;
+    admin1?: string;
+}
+
+export interface GeoCodingResponse {
+    results?: GeoCodingResult[];
 }
