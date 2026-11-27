@@ -15,6 +15,7 @@ export interface WeatherResponse {
     latitude: number;
     longitude: number;
     current: CurrentWeather;
+    daily: DailyWeather;
 }
 export interface GeoCodingResult {
     id: number;
@@ -27,4 +28,20 @@ export interface GeoCodingResult {
 
 export interface GeoCodingResponse {
     results?: GeoCodingResult[];
+}
+
+export type Unit = "celsius" | "fahrenheit";
+
+export interface DailyWeather {
+    time: string[];
+    weather_code: number[];
+    temperature_2m_max: number[];
+    temperature_2m_min: number[];
+}
+
+export interface DayForecast {
+    date: string;
+    weatherCode: number;
+    max: number;
+    min: number;
 }

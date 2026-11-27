@@ -18,7 +18,9 @@ export async function fetchWeather(
         longitude: String(city.longitude),
         current:
         "temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weather_code",
-        timezone: "auto"  //makes "time" show the city's local time, not UTC
+        daily: "weather_code,temperature_2m_max,temperature_2m_min",
+        forecast: "7",
+        timezone: "auto"  //required for daily data, and it makes each "day" match the city's own calender 
     });
 
 

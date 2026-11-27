@@ -36,3 +36,30 @@ main {text-align: center; padding: 1rem;}
   background: none; border: none; color: inherit; font-size: 1rem; cursor: pointer;
 }
 .suggestions button:hover, .suggestions button:focus-visible {background: #334155;}
+
+
+.toolbar {display: flex; gap: 1rem; align-items: flex-end; justify-content: center; flex-wrap: wrap; }
+.unit-toggle {display: flex; margin-bottom: 0.4rem;}
+.unit-toggle button {
+  padding: 0.6rem 0.9rem; border: 1px soli #475569; background: #1e293b;
+  color: inherit; cursor: pointer; font-size: 1rem;
+}
+
+.unit-toggle button:first-child {border-radius: 0.5rem 0 0 0.5rem; }
+.unit-toggle button:last-child {border-radius: 0 0.5rem 0.5rem 0;}
+/*Style by attribute: the button that is "pressed" gets highlighted*/
+.unit-toggle button[aria-pressed="true"] {background: #3b82f6; border-color: #3b82f6;}
+
+.forecast {background: #1e293b; border-radius: 1rem; padding: 1rem; padding: 1rem 1.5rem; margin: 1rem auto; max-width: 420px; }
+.forecast h2 {margin-top: 0; font-size: 1.1rem; }
+.forecast ul {list-style: none; margin: 0; padding: 0; }
+.forecast li {
+  display: grid; grid-template-columns: 4rem 2 rem 1fr; /*three columns: day, icon, temps*/
+  align-items: center; padding: 0.5rem 0; border-top: 1px solid #334155;
+}
+.forecast li:first-child {border-top: none;} 
+.forecast .day {text-align: left; }
+.forecast .range {text-align: right;}
+
+footer {margin-top: 1.5rem; opacity: 0.7;}
+footer a {color: inherit;}
